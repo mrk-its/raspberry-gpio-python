@@ -21,7 +21,7 @@ SOFTWARE.
 */
 
 /* See the following for up to date information:
- * https://www.raspberrypi.org/documentation/hardware/raspberrypi/revision-codes/README.md
+ *https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#raspberry-pi-revision-codes
  */
 
 #include <stdio.h>
@@ -99,6 +99,7 @@ int get_rpi_info(rpi_info *info)
             switch (revision[len-2]) {
                case '0': info->type = "Compute Module 3+"; info->p1_revision = 0; break;
                case '1': info->type = "Pi 4 Model B"; info->p1_revision = 3; break;
+               case '2': info->type = "Zero 2 W"; info->p1_revision = 3; break;
                case '3': info->type = "Pi 400"; info->p1_revision = 3; break;
                case '4': info->type = "Compute Module 4"; info->p1_revision = 0; break;
                default : info->type = "Unknown"; info->p1_revision = 3; break;
