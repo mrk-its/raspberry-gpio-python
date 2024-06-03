@@ -60,7 +60,9 @@ int get_rpi_info(rpi_info *info)
              strcmp(hardware, "BCM2837") == 0 ) {
             found = 1;
          }
-         sscanf(buffer, "Revision	: %s", revision);
+         if(sscanf(buffer, "Revision	: %s", revision) == 1) {
+	   found = 1;
+	 }
       }
    }
    else
